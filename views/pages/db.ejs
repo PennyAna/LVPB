@@ -7,14 +7,31 @@
 <% include ../partials/nav.ejs %>
 <div class="container">
 <h2>Database Results</h2>
-
 <ul>
   Hello there!
-    <% results.forEach(function(r) { %>
-        <li><%= r.id %> - <%= r.name %></li>
-    <% }); %>
+  <% results_media.forEach(function(r) { %>
+    <li>
+      <%= r.title_id %> - 
+      <%= r.title_name %> -
+      <%= r.genre_id %> - 
+      <%= r.media_type_tv %> - 
+      <%= r.media_type_film %> - 
+      <%= r.media_type_other %>
+    </li>
+  <% }); %>
+  <% results_genre.forEach(function(r) { %>
+    <li>
+      <%= r.genre_id %> - 
+      <%= r.genre_name %>
+    </li>
+  <% }); %>
+  <% results_user.forEach(function(r) { %>
+      <li>
+        <%= r.username %> - 
+        <%= r.password %>
+      </li>
+    <% });%>
 </ul>
-
 </div>
 </body>
 </html>
